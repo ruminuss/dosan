@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #0a1628;
+  --color-foreground: #ffffff;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --animate-wave: wave 8s ease-in-out infinite;
+  --animate-wave-slow: wave 12s ease-in-out infinite reverse;
+  --animate-bubble: bubble 10s ease-in infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-25px); }
+}
+
+@keyframes bubble {
+  0% { transform: translateY(100vh); opacity: 0; }
+  10% { opacity: 0.2; }
+  90% { opacity: 0.1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}

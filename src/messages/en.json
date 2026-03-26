@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "ROK Navy Submarine Crew - Safe Return",
+    "description": "Support the safe return of ROK Navy submarine crew on their trans-Pacific mission"
+  },
+  "hero": {
+    "subtitle": "REPUBLIC OF KOREA NAVY",
+    "title": "Submarine Crew Support",
+    "shipInfo": "",
+    "voyage": "",
+    "counterLabel": "Days Since Departure",
+    "counterPrefix": "D +",
+    "departureInfo": "Departed Mar 25, 2026"
+  },
+  "stats": {
+    "visitors": "Total Visitors",
+    "messages": "Messages",
+    "distance": "Voyage Distance",
+    "distanceUnit": "km"
+  },
+  "guestbook": {
+    "title": "Leave a Message",
+    "listTitle": "Messages of Support",
+    "realtime": "Live",
+    "warning": "Security Notice: Do not include ship location, real names, or contact information. Messages containing such content will be rejected.",
+    "contact": "Contact",
+    "nicknamePlaceholder": "Nickname (max 20 chars)",
+    "nicknameLabel": "Nickname",
+    "nationalityLabel": "Nationality",
+    "messagePlaceholder": "Write your message of support (max 200 chars)",
+    "messageLabel": "Message",
+    "submit": "Send Support",
+    "submitting": "Sending...",
+    "justNow": "Just now",
+    "minutesAgo": "{n}m ago",
+    "hoursAgo": "{n}h ago",
+    "daysAgo": "{n}d ago",
+    "loadMore": "Load More",
+    "noMessages": "Be the first to leave a message of support!",
+    "errorName": "This appears to contain a real name. Please use a nickname.",
+    "errorLocation": "This appears to contain military location information.",
+    "errorContact": "This appears to contain contact information.",
+    "errorRateLimit": "Please wait a moment before sending another message.",
+    "errorGeneric": "Failed to send message. Please try again.",
+    "successMessage": "Your message has been sent!"
+  },
+  "language": {
+    "ko": "한국어",
+    "en": "English"
+  }
+}

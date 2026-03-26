@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "대한민국 잠수함 승조원 무사귀환 응원",
+    "description": "태평양 횡단 임무 중인 대한민국 해군 잠수함 승조원들의 무사귀환을 응원합니다"
+  },
+  "hero": {
+    "subtitle": "REPUBLIC OF KOREA NAVY",
+    "title": "잠수함 승조원 응원",
+    "shipInfo": "",
+    "voyage": "",
+    "counterLabel": "출항 후",
+    "counterPrefix": "D +",
+    "departureInfo": "2026.03.25 출항"
+  },
+  "stats": {
+    "visitors": "총 방문자",
+    "messages": "응원 메시지",
+    "distance": "항해 거리",
+    "distanceUnit": "km"
+  },
+  "guestbook": {
+    "title": "응원 한마디",
+    "listTitle": "응원 메시지",
+    "realtime": "실시간",
+    "warning": "보안 주의: 함정의 위치, 실명, 연락처 등 군사·개인 정보는 입력하지 마세요. 해당 내용이 포함된 메시지는 등록되지 않습니다.",
+    "contact": "문의",
+    "nicknamePlaceholder": "닉네임 (20자 이내)",
+    "nicknameLabel": "닉네임",
+    "nationalityLabel": "국적",
+    "messagePlaceholder": "응원 메시지를 입력하세요 (200자 이내)",
+    "messageLabel": "응원 메시지",
+    "submit": "응원하기",
+    "submitting": "등록 중...",
+    "justNow": "방금 전",
+    "minutesAgo": "{n}분 전",
+    "hoursAgo": "{n}시간 전",
+    "daysAgo": "{n}일 전",
+    "loadMore": "더 보기",
+    "noMessages": "첫 번째 응원 메시지를 남겨주세요!",
+    "errorName": "실명이 포함된 것 같습니다. 닉네임을 사용해 주세요.",
+    "errorLocation": "군사 위치 정보가 포함된 것 같습니다.",
+    "errorContact": "연락처 정보가 포함되어 있습니다.",
+    "errorRateLimit": "잠시 후 다시 시도해 주세요.",
+    "errorGeneric": "메시지 등록에 실패했습니다. 다시 시도해 주세요.",
+    "successMessage": "응원 메시지가 등록되었습니다!"
+  },
+  "language": {
+    "ko": "한국어",
+    "en": "English"
+  }
+}

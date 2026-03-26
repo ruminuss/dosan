@@ -2,7 +2,19 @@
 
 태평양 횡단 임무 중인 대한민국 해군 잠수함 승조원들의 무사귀환을 응원하는 공개 웹사이트입니다.
 
-**Live:** https://dosan-phi.vercel.app
+> **Live Demo:** [https://dosan-phi.vercel.app](https://dosan-phi.vercel.app)
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://dosan-phi.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://typescriptlang.org)
+[![Supabase](https://img.shields.io/badge/Supabase-Realtime-green?style=flat-square&logo=supabase)](https://supabase.com)
+
+## Demo
+
+### [https://dosan-phi.vercel.app](https://dosan-phi.vercel.app)
+
+- `/ko` - 한국어 페이지
+- `/en` - English page
 
 ## 주요 기능
 

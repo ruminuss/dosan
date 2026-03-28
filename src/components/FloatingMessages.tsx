@@ -46,6 +46,7 @@ export default function FloatingMessages() {
 
   // 초기 로드: API에서 최신 20개 fetch 후 MAX_ACTIVE개 순차 표시
   useEffect(() => {
+    const timerIds: ReturnType<typeof setTimeout>[] = [];
     fetch("/api/messages")
       .then((r) => r.json())
       .then((data: { messages: Message[] }) => {
@@ -54,15 +55,19 @@ export default function FloatingMessages() {
         const initialPositions: FloatingPosition[] = [];
         const count = Math.min(MAX_ACTIVE, data.messages.length);
         for (let i = 0; i < count; i++) {
-          setTimeout(() => {
-            const msg = popFromPool();
-            if (!msg) return;
-            const pos = pickRandomPosition(initialPositions);
-            initialPositions.push(pos);
-            setActiveMessages((prev) => [...prev, toFloating(msg, pos.top, pos.left)]);
-          }, i * INIT_STAGGER_MS);
+          timerIds.push(
+            setTimeout(() => {
+              const msg = popFromPool();
+              if (!msg) return;
+              const pos = pickRandomPosition(initialPositions);
+              initialPositions.push(pos);
+              setActiveMessages((prev) => [...prev, toFloating(msg, pos.top, pos.left)]);
+            }, i * INIT_STAGGER_MS)
+          );
         }
-      });
+      })
+      .catch(() => {});
+    return () => timerIds.forEach(clearTimeout);
   }, [popFromPool]);
 
   // 3초마다 가장 오래된 bubble 교체
@@ -91,7 +96,10 @@ export default function FloatingMessages() {
         "postgres_changes",
         { event: "INSERT", schema: "public", table: "messages" },
         (payload) => {
-          poolRef.current = [payload.new as Message, ...poolRef.current];
+          const raw = payload.new;
+          if (raw && typeof (raw as Message).id !== "undefined") {
+            poolRef.current = [raw as Message, ...poolRef.current];
+          }
         }
       )
       .subscribe();

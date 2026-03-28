@@ -4,32 +4,32 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { getSupabaseBrowser } from "@/lib/supabase-browser";
 import { getFlagEmoji } from "@/lib/countries";
-import {
-  pickRandomPosition,
-  truncateMessage,
-  type FloatingPosition,
-} from "@/lib/floating-messages-utils";
 import type { Message } from "@/types";
 
-interface FloatingMessage extends FloatingPosition {
+interface FloatingMessage {
   id: string;
   nickname: string;
   nationality: string;
   message: string;
+  top: number;
 }
 
 const MAX_ACTIVE = 5;
-const ROTATE_INTERVAL_MS = 3000;
-const INIT_STAGGER_MS = 200;
+const SPAWN_INTERVAL_MS = 2200;
+const SCROLL_DURATION = 12; // 우→좌 이동 시간 (초)
+const LANES = [10, 22, 35, 50, 63, 76]; // 수직 위치 레인 (%)
 
-function toFloating(msg: Message, top: number, left: number): FloatingMessage {
+function getRandomLane(): number {
+  return LANES[Math.floor(Math.random() * LANES.length)];
+}
+
+function toFloating(msg: Message): FloatingMessage {
   return {
     id: `${msg.id}-${Date.now()}-${Math.random()}`,
     nickname: msg.nickname,
     nationality: msg.nationality,
     message: msg.message,
-    top,
-    left,
+    top: getRandomLane(),
   };
 }
 
@@ -44,7 +44,20 @@ export default function FloatingMessages() {
     return msg;
   }, []);
 
-  // 초기 로드: API에서 최신 20개 fetch 후 MAX_ACTIVE개 순차 표시
+  const spawnMessage = useCallback(() => {
+    const msg = popFromPool();
+    if (!msg) return;
+    setActiveMessages((prev) => {
+      if (prev.length >= MAX_ACTIVE) return prev;
+      return [...prev, toFloating(msg)];
+    });
+  }, [popFromPool]);
+
+  const removeMessage = useCallback((id: string) => {
+    setActiveMessages((prev) => prev.filter((m) => m.id !== id));
+  }, []);
+
+  // 초기 로드: API에서 최신 20개 fetch 후 순차 생성
   useEffect(() => {
     const timerIds: ReturnType<typeof setTimeout>[] = [];
     fetch("/api/messages")
@@ -52,40 +65,20 @@ export default function FloatingMessages() {
       .then((data: { messages: Message[] }) => {
         if (!data.messages?.length) return;
         poolRef.current = data.messages;
-        const initialPositions: FloatingPosition[] = [];
-        const count = Math.min(MAX_ACTIVE, data.messages.length);
+        const count = Math.min(3, data.messages.length);
         for (let i = 0; i < count; i++) {
-          timerIds.push(
-            setTimeout(() => {
-              const msg = popFromPool();
-              if (!msg) return;
-              const pos = pickRandomPosition(initialPositions);
-              initialPositions.push(pos);
-              setActiveMessages((prev) => [...prev, toFloating(msg, pos.top, pos.left)]);
-            }, i * INIT_STAGGER_MS)
-          );
+          timerIds.push(setTimeout(() => spawnMessage(), i * SPAWN_INTERVAL_MS));
         }
       })
       .catch((err) => console.error("[FloatingMessages] fetch failed:", err));
     return () => timerIds.forEach(clearTimeout);
-  }, [popFromPool]);
+  }, [spawnMessage]);
 
-  // 3초마다 가장 오래된 bubble 교체
+  // 주기적으로 새 버블 생성
   useEffect(() => {
-    const timer = setInterval(() => {
-      const msg = popFromPool();
-      if (!msg) return;
-      setActiveMessages((prev) => {
-        if (prev.length === 0) return prev;
-        const remaining = prev.slice(1);
-        const pos = pickRandomPosition(
-          remaining.map((m) => ({ top: m.top, left: m.left }))
-        );
-        return [...remaining, toFloating(msg, pos.top, pos.left)];
-      });
-    }, ROTATE_INTERVAL_MS);
+    const timer = setInterval(spawnMessage, SPAWN_INTERVAL_MS);
     return () => clearInterval(timer);
-  }, [popFromPool]);
+  }, [spawnMessage]);
 
   // Supabase Realtime: 신규 메시지를 pool 앞에 삽입
   useEffect(() => {
@@ -113,11 +106,15 @@ export default function FloatingMessages() {
       {activeMessages.map((msg) => (
         <motion.div
           key={msg.id}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.6 }}
-          style={{ top: `${msg.top}%`, left: `${msg.left}%` }}
+          initial={{ left: "110%", opacity: 0 }}
+          animate={{ left: "-35%", opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            left: { duration: SCROLL_DURATION, ease: "linear" },
+            opacity: { duration: 0.5 },
+          }}
+          onAnimationComplete={() => removeMessage(msg.id)}
+          style={{ top: `${msg.top}%` }}
           className="absolute pointer-events-none z-[5] w-[160px]"
         >
           <div className="bg-[rgba(74,144,217,0.15)] border border-[rgba(74,144,217,0.35)] rounded-2xl px-3 py-2 text-xs text-[#7ab3e0]">

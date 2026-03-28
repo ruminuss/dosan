@@ -5,6 +5,7 @@ import Image from "next/image";
 import { DEPARTURE_DATE } from "@/lib/constants";
 import WaveAnimation from "./WaveAnimation";
 import BubbleParticles from "./BubbleParticles";
+import FloatingMessages from "./FloatingMessages";
 
 interface HeroProps {
   t: {
@@ -66,6 +67,7 @@ export default function HeroSection({ t }: HeroProps) {
       <div className="hidden md:flex flex-1 relative items-center justify-center bg-gradient-to-b from-[#0d2847] via-[#1a3a5f] to-[#0a2040]">
         <WaveAnimation />
         <BubbleParticles />
+        <FloatingMessages />
         <Image
           src="/submarine.svg"
           alt="Submarine"

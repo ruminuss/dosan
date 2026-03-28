@@ -43,7 +43,7 @@ export default async function HomePage({
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-6 text-xs text-[#3a6a9f] border-t border-[#1e3a5f]">
+      <footer className="text-center py-6 text-xs text-[#4a8fc0] border-t border-[#1e4f91]">
         <p>
           {locale === "ko"
             ? "대한민국 잠수함 승조원의 무사귀환을 응원합니다"

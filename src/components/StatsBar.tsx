@@ -38,14 +38,14 @@ export default function StatsBar({ t }: StatsBarProps) {
   ];
 
   return (
-    <section className="bg-[#0d1f35] py-8">
+    <section className="bg-[#0d2e5f] py-8">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-center gap-4 md:gap-8 px-4">
         {cards.map((card) => (
           <div
             key={card.label}
-            className="flex-1 bg-[#0a1628] border border-[#1e3a5f] rounded-xl p-6 text-center"
+            className="flex-1 bg-[#0a1f3e] border border-[#1e4f91] rounded-xl p-6 text-center"
           >
-            <p className="text-sm text-[#4a90d9] mb-2">
+            <p className="text-sm text-[#29b6f6] mb-2">
               {card.icon} {card.label}
             </p>
             <p className="text-3xl md:text-4xl font-bold">

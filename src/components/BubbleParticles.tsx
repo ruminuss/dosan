@@ -29,7 +29,7 @@ export default function BubbleParticles() {
       {bubbles.map((b) => (
         <div
           key={b.id}
-          className="absolute rounded-full bg-[#4a90d9] opacity-20 animate-bubble"
+          className="absolute rounded-full bg-[#29b6f6] opacity-20 animate-bubble"
           style={{
             left: `${b.x}%`,
             width: b.size,

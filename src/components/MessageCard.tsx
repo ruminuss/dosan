@@ -32,17 +32,17 @@ export default function MessageCard({ message, t, isNew }: MessageCardProps) {
       initial={isNew ? { opacity: 0, y: -20 } : false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="p-4 bg-[rgba(74,144,217,0.05)] rounded-lg border-l-[3px] border-[#4a90d9]"
+      className="p-4 bg-[rgba(41,182,246,0.05)] rounded-lg border-l-[3px] border-[#29b6f6]"
     >
       <div className="flex justify-between items-center mb-1">
-        <span className="text-sm font-bold text-[#4a90d9]">
+        <span className="text-sm font-bold text-[#29b6f6]">
           {getFlagEmoji(message.nationality)} {message.nickname}
         </span>
-        <span className="text-xs text-[#3a6a9f]">
+        <span className="text-xs text-[#4a8fc0]">
           {formatTime(message.created_at, t)}
         </span>
       </div>
-      <p className="text-sm text-[#c0d8f0]">{message.message}</p>
+      <p className="text-sm text-[#b3e5fc]">{message.message}</p>
     </motion.div>
   );
 }

@@ -83,16 +83,16 @@ export default function GuestbookList({ t }: GuestbookListProps) {
   };
 
   return (
-    <div className="bg-[#0d1f35] border border-[#1e3a5f] rounded-xl p-6">
+    <div className="bg-[#0d2e5f] border border-[#1e4f91] rounded-xl p-6">
       <h2 className="text-lg font-bold mb-4">
         {t.listTitle}{" "}
-        <span className="text-sm font-normal text-[#4a90d9]">{t.realtime}</span>
+        <span className="text-sm font-normal text-[#29b6f6]">{t.realtime}</span>
       </h2>
 
       {loading ? (
-        <div className="text-center py-8 text-[#5a8ab5]">Loading...</div>
+        <div className="text-center py-8 text-[#5badd8]">Loading...</div>
       ) : messages.length === 0 ? (
-        <div className="text-center py-8 text-[#5a8ab5]">{t.noMessages}</div>
+        <div className="text-center py-8 text-[#5badd8]">{t.noMessages}</div>
       ) : (
         <div className="space-y-3">
           {messages.map((msg) => (
@@ -109,7 +109,7 @@ export default function GuestbookList({ t }: GuestbookListProps) {
       {nextCursor && (
         <button
           onClick={loadMore}
-          className="w-full mt-4 py-2 text-sm text-[#4a90d9] hover:text-[#7ab3e0] transition-colors"
+          className="w-full mt-4 py-2 text-sm text-[#29b6f6] hover:text-[#81d4fa] transition-colors"
         >
           {t.loadMore}
         </button>

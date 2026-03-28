@@ -44,7 +44,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className="bg-[#0a1628] text-white min-h-screen antialiased">
+      <body className="bg-[#0a1f3e] text-white min-h-screen antialiased">
         {children}
       </body>
     </html>

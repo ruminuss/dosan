@@ -131,7 +131,7 @@ export default function FloatingMessages() {
           style={{ top: `${msg.top}%`, left: `${msg.left}%` }}
           className={`absolute pointer-events-none z-[5] ${SIZE_VARIANTS[msg.sizeIdx].box}`}
         >
-          <div className={`bg-[rgba(74,144,217,0.15)] border border-[rgba(74,144,217,0.35)] rounded-2xl px-3 py-2 ${SIZE_VARIANTS[msg.sizeIdx].text} text-[#7ab3e0]`}>
+          <div className={`bg-[rgba(41,182,246,0.15)] border border-[rgba(41,182,246,0.35)] rounded-2xl px-3 py-2 ${SIZE_VARIANTS[msg.sizeIdx].text} text-[#81d4fa]`}>
             {/* 메시지 텍스트: 우→좌 무한 스크롤 */}
             <div className="overflow-hidden w-full">
               <motion.p

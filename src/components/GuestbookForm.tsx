@@ -73,7 +73,7 @@ export default function GuestbookForm({ locale, t, onMessageSent }: GuestbookFor
   }
 
   return (
-    <div className="bg-[#0d1f35] border border-[#1e3a5f] rounded-xl p-6">
+    <div className="bg-[#0d2e5f] border border-[#1e4f91] rounded-xl p-6">
       <h2 className="text-lg font-bold mb-4">{t.title}</h2>
 
       {/* Warning */}
@@ -85,7 +85,7 @@ export default function GuestbookForm({ locale, t, onMessageSent }: GuestbookFor
       <form onSubmit={handleSubmit} className="space-y-3">
         {/* Nickname */}
         <div>
-          <label className="text-xs text-[#7ab3e0] mb-1 block">{t.nicknameLabel}</label>
+          <label className="text-xs text-[#81d4fa] mb-1 block">{t.nicknameLabel}</label>
           <input
             type="text"
             value={nickname}
@@ -93,17 +93,17 @@ export default function GuestbookForm({ locale, t, onMessageSent }: GuestbookFor
             maxLength={MAX_NICKNAME_LENGTH}
             placeholder={t.nicknamePlaceholder}
             required
-            className="w-full bg-[#0a1628] border border-[#1e3a5f] rounded-lg px-3 py-2 text-sm text-white placeholder-[#5a8ab5] focus:border-[#4a90d9] focus:outline-none transition-colors"
+            className="w-full bg-[#0a1f3e] border border-[#1e4f91] rounded-lg px-3 py-2 text-sm text-white placeholder-[#5badd8] focus:border-[#29b6f6] focus:outline-none transition-colors"
           />
         </div>
 
         {/* Nationality */}
         <div>
-          <label className="text-xs text-[#7ab3e0] mb-1 block">{t.nationalityLabel}</label>
+          <label className="text-xs text-[#81d4fa] mb-1 block">{t.nationalityLabel}</label>
           <select
             value={nationality}
             onChange={(e) => setNationality(e.target.value)}
-            className="w-full bg-[#0a1628] border border-[#1e3a5f] rounded-lg px-3 py-2 text-sm text-white focus:border-[#4a90d9] focus:outline-none transition-colors"
+            className="w-full bg-[#0a1f3e] border border-[#1e4f91] rounded-lg px-3 py-2 text-sm text-white focus:border-[#29b6f6] focus:outline-none transition-colors"
           >
             {COUNTRIES.map((c) => (
               <option key={c.code} value={c.code}>
@@ -115,7 +115,7 @@ export default function GuestbookForm({ locale, t, onMessageSent }: GuestbookFor
 
         {/* Message */}
         <div>
-          <label className="text-xs text-[#7ab3e0] mb-1 block">{t.messageLabel}</label>
+          <label className="text-xs text-[#81d4fa] mb-1 block">{t.messageLabel}</label>
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -123,9 +123,9 @@ export default function GuestbookForm({ locale, t, onMessageSent }: GuestbookFor
             placeholder={t.messagePlaceholder}
             required
             rows={3}
-            className="w-full bg-[#0a1628] border border-[#1e3a5f] rounded-lg px-3 py-2 text-sm text-white placeholder-[#5a8ab5] focus:border-[#4a90d9] focus:outline-none transition-colors resize-none"
+            className="w-full bg-[#0a1f3e] border border-[#1e4f91] rounded-lg px-3 py-2 text-sm text-white placeholder-[#5badd8] focus:border-[#29b6f6] focus:outline-none transition-colors resize-none"
           />
-          <p className="text-right text-[10px] text-[#3a6a9f] mt-1">
+          <p className="text-right text-[10px] text-[#4a8fc0] mt-1">
             {message.length}/{MAX_MESSAGE_LENGTH}
           </p>
         </div>
@@ -142,7 +142,7 @@ export default function GuestbookForm({ locale, t, onMessageSent }: GuestbookFor
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-full bg-gradient-to-r from-[#4a90d9] to-[#3a7bc8] text-white font-bold py-2.5 rounded-lg hover:from-[#5a9de5] hover:to-[#4a8bd8] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-gradient-to-r from-[#29b6f6] to-[#1976d2] text-white font-bold py-2.5 rounded-lg hover:from-[#42a5f5] hover:to-[#2196f3] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === "submitting" ? t.submitting : t.submit}
         </button>

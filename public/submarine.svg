@@ -14,8 +14,14 @@
       <stop offset="100%" stop-color="#0288d1" stop-opacity="0.5"/>
     </radialGradient>
     <radialGradient id="propHub" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#80deea"/>
+      <stop offset="0%" stop-color="#e1f5fe"/>
+      <stop offset="60%" stop-color="#80deea"/>
       <stop offset="100%" stop-color="#0277bd"/>
+    </radialGradient>
+    <radialGradient id="bladeGrad" cx="436" cy="80" r="26" gradientUnits="userSpaceOnUse">
+      <stop offset="10%" stop-color="#80deea"/>
+      <stop offset="50%" stop-color="#29b6f6"/>
+      <stop offset="100%" stop-color="#0277bd" stop-opacity="0.85"/>
     </radialGradient>
   </defs>
 
@@ -123,19 +129,26 @@
 
   <!-- Propeller hub (outer ring static) -->
   <circle cx="436" cy="80" r="7" fill="#0277bd" stroke="#4dd0e1" stroke-width="1.8"/>
-  <!-- Spinning: inner hub + 5 blades -->
+  <!-- Spinning: blades + inner hub -->
   <g>
-    <circle cx="436" cy="80" r="4" fill="url(#propHub)"/>
-    <path d="M 436 80 C 433 70, 429 61, 432 55 C 439 58, 442 67, 439 75 Z"
-      fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
-    <path d="M 436 80 C 446 75, 453 70, 457 64 C 455 71, 451 77, 443 81 Z"
-      fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
-    <path d="M 436 80 C 445 87, 451 95, 449 101 C 443 99, 439 91, 436 84 Z"
-      fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
-    <path d="M 436 80 C 428 88, 423 96, 419 100 C 419 92, 423 85, 431 82 Z"
-      fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
-    <path d="M 436 80 C 426 76, 419 72, 418 65 C 424 67, 430 72, 433 78 Z"
-      fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
+    <!-- 5 elegant swept blades (template points 12 o'clock, rotated 72° each) -->
+    <path d="M 436,80 C 441,77 445,66 441,58 C 439,55 435,55 432,58 C 428,65 430,76 436,80 Z"
+      fill="url(#bladeGrad)" stroke="#b3e5fc" stroke-width="0.7"/>
+    <path transform="rotate(72 436 80)"
+      d="M 436,80 C 441,77 445,66 441,58 C 439,55 435,55 432,58 C 428,65 430,76 436,80 Z"
+      fill="url(#bladeGrad)" stroke="#b3e5fc" stroke-width="0.7"/>
+    <path transform="rotate(144 436 80)"
+      d="M 436,80 C 441,77 445,66 441,58 C 439,55 435,55 432,58 C 428,65 430,76 436,80 Z"
+      fill="url(#bladeGrad)" stroke="#b3e5fc" stroke-width="0.7"/>
+    <path transform="rotate(216 436 80)"
+      d="M 436,80 C 441,77 445,66 441,58 C 439,55 435,55 432,58 C 428,65 430,76 436,80 Z"
+      fill="url(#bladeGrad)" stroke="#b3e5fc" stroke-width="0.7"/>
+    <path transform="rotate(288 436 80)"
+      d="M 436,80 C 441,77 445,66 441,58 C 439,55 435,55 432,58 C 428,65 430,76 436,80 Z"
+      fill="url(#bladeGrad)" stroke="#b3e5fc" stroke-width="0.7"/>
+    <!-- Inner hub cap -->
+    <circle cx="436" cy="80" r="5" fill="url(#propHub)" stroke="#40c4ff" stroke-width="0.8"/>
+    <circle cx="436" cy="80" r="2.2" fill="#e1f5fe" opacity="0.85"/>
     <animateTransform attributeName="transform" type="rotate"
       from="0 436 80" to="360 436 80" dur="1.2s" repeatCount="indefinite"/>
   </g>

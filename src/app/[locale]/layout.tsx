@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { isValidLocale, getMessages } from "@/lib/i18n";
 import { notFound } from "next/navigation";
-import type { Locale } from "@/types";
 
 export async function generateStaticParams() {
   return [{ locale: "ko" }, { locale: "en" }];
@@ -19,6 +17,18 @@ export async function generateMetadata({
   return {
     title: t.meta.title,
     description: t.meta.description,
+    openGraph: {
+      title: t.meta.title,
+      description: t.meta.description,
+      url: `https://dosan-phi.vercel.app/${locale}`,
+      siteName: "도산함 응원",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t.meta.title,
+      description: t.meta.description,
+    },
   };
 }
 
@@ -34,14 +44,6 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2138008158968023"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      </head>
       <body className="bg-[#0a1628] text-white min-h-screen antialiased">
         {children}
       </body>

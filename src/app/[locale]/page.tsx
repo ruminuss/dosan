@@ -6,7 +6,6 @@ import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import GuestbookForm from "@/components/GuestbookForm";
 import GuestbookList from "@/components/GuestbookList";
-import AdBanner from "@/components/AdBanner";
 
 export default async function HomePage({
   params,
@@ -31,11 +30,6 @@ export default async function HomePage({
       {/* Section 2: Stats */}
       <StatsBar t={t.stats} />
 
-      {/* Ad: Stats 아래 */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdBanner format="horizontal" />
-      </div>
-
       {/* Section 3: Guestbook */}
       <section className="max-w-6xl mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-6">
@@ -47,11 +41,6 @@ export default async function HomePage({
           </div>
         </div>
       </section>
-
-      {/* Ad: Guestbook 아래 */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdBanner format="horizontal" />
-      </div>
 
       {/* Footer */}
       <footer className="text-center py-6 text-xs text-[#3a6a9f] border-t border-[#1e3a5f]">

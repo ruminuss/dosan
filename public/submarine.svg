@@ -1,153 +1,187 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 144" fill="none">
   <defs>
     <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1e88e5"/>
-      <stop offset="50%" stop-color="#0d5fa0"/>
-      <stop offset="100%" stop-color="#083970"/>
+      <stop offset="0%" stop-color="#40c4ff"/>
+      <stop offset="45%" stop-color="#0288d1"/>
+      <stop offset="100%" stop-color="#01579b"/>
     </linearGradient>
     <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#42a5f5"/>
-      <stop offset="100%" stop-color="#0d5fa0"/>
+      <stop offset="0%" stop-color="#80deea"/>
+      <stop offset="100%" stop-color="#0288d1"/>
     </linearGradient>
     <radialGradient id="porthole" cx="35%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#b3e5fc"/>
-      <stop offset="100%" stop-color="#0277bd" stop-opacity="0.4"/>
+      <stop offset="0%" stop-color="#e1f5fe"/>
+      <stop offset="100%" stop-color="#0288d1" stop-opacity="0.5"/>
     </radialGradient>
-    <radialGradient id="propGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#40c4ff"/>
-      <stop offset="100%" stop-color="#1565c0"/>
+    <radialGradient id="propHub" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#80deea"/>
+      <stop offset="100%" stop-color="#0277bd"/>
     </radialGradient>
   </defs>
 
   <!-- Hull shadow -->
-  <ellipse cx="240" cy="118" rx="178" ry="8" fill="#000" opacity="0.18"/>
+  <ellipse cx="240" cy="120" rx="178" ry="7" fill="#000" opacity="0.2"/>
 
-  <!-- Main hull (torpedo shape) -->
-  <path d="M 68 80
-    C 68 57, 88 46, 114 44
-    L 346 44
-    C 380 44, 400 57, 408 70
-    C 413 78, 413 88, 408 96
-    C 400 109, 380 116, 346 116
-    L 114 116
-    C 88 116, 68 105, 68 88 Z"
-    fill="url(#hull)" stroke="#29b6f6" stroke-width="2"/>
+  <!-- Main hull -->
+  <path d="M 66 80
+    C 66 56, 86 45, 112 43
+    L 346 43
+    C 381 43, 402 56, 410 70
+    C 415 78, 415 88, 410 97
+    C 402 110, 381 118, 346 118
+    L 112 118
+    C 86 118, 66 106, 66 90 Z"
+    fill="url(#hull)" stroke="#80deea" stroke-width="2"/>
 
-  <!-- Hull highlight stripe -->
-  <path d="M 114 49 L 340 47 C 372 47 392 57 402 70"
-    stroke="#64b5f6" stroke-width="1" opacity="0.4" fill="none"/>
+  <!-- Hull top sheen -->
+  <path d="M 112 48 L 340 46 C 374 46 395 57 405 70"
+    stroke="#b3e5fc" stroke-width="1.2" opacity="0.5" fill="none"/>
 
   <!-- Bow dome -->
-  <path d="M 68 88 C 54 88, 38 84, 32 80 C 38 76, 54 72, 68 72 Z"
-    fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.5"/>
+  <path d="M 66 90 C 52 90, 36 86, 30 80 C 36 74, 52 70, 66 70 Z"
+    fill="#0288d1" stroke="#80deea" stroke-width="1.5"/>
 
-  <!-- Torpedo tube ports -->
-  <rect x="30" y="72" width="22" height="7" rx="3.5" fill="#062a4a" stroke="#29b6f6" stroke-width="1.2"/>
-  <rect x="30" y="81" width="22" height="7" rx="3.5" fill="#062a4a" stroke="#29b6f6" stroke-width="1.2"/>
-  <circle cx="32" cy="75.5" r="2" fill="#29b6f6" opacity="0.6"/>
-  <circle cx="32" cy="84.5" r="2" fill="#29b6f6" opacity="0.6"/>
+  <!-- Torpedo tubes -->
+  <rect x="28" y="71" width="24" height="7" rx="3.5" fill="#01579b" stroke="#40c4ff" stroke-width="1.2"/>
+  <rect x="28" y="80" width="24" height="7" rx="3.5" fill="#01579b" stroke="#40c4ff" stroke-width="1.2"/>
+  <circle cx="30" cy="74.5" r="2" fill="#80deea" opacity="0.7"/>
+  <circle cx="30" cy="83.5" r="2" fill="#80deea" opacity="0.7"/>
 
-  <!-- Bow hydroplanes -->
-  <path d="M 134 83 L 104 64 L 110 62 L 139 80 Z" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
-  <path d="M 134 97 L 104 116 L 110 118 L 139 100 Z" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
+  <!-- Bow planes -->
+  <path d="M 132 83 L 102 63 L 108 61 L 137 81 Z" fill="#0277bd" stroke="#40c4ff" stroke-width="1.2"/>
+  <path d="M 132 97 L 102 117 L 108 119 L 137 99 Z" fill="#0277bd" stroke="#40c4ff" stroke-width="1.2"/>
 
-  <!-- Stern hydroplanes -->
-  <path d="M 364 83 L 396 64 L 400 67 L 367 85 Z" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
-  <path d="M 364 97 L 396 116 L 400 113 L 367 95 Z" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
+  <!-- Stern planes -->
+  <path d="M 364 83 L 398 63 L 402 66 L 367 85 Z" fill="#0277bd" stroke="#40c4ff" stroke-width="1.2"/>
+  <path d="M 364 97 L 398 117 L 402 114 L 367 95 Z" fill="#0277bd" stroke="#40c4ff" stroke-width="1.2"/>
 
   <!-- Conning tower -->
-  <path d="M 207 44 L 207 20 C 207 14, 212 11, 220 11 L 264 11 C 272 11, 277 14, 277 20 L 277 44 Z"
-    fill="url(#tower)" stroke="#29b6f6" stroke-width="2"/>
-  <line x1="207" y1="32" x2="277" y2="32" stroke="#64b5f6" stroke-width="0.8" opacity="0.4"/>
+  <path d="M 205 43 L 205 18 C 205 12, 210 9, 218 9 L 265 9 C 273 9, 278 12, 278 18 L 278 43 Z"
+    fill="url(#tower)" stroke="#80deea" stroke-width="2"/>
+  <line x1="205" y1="31" x2="278" y2="31" stroke="#b3e5fc" stroke-width="0.9" opacity="0.5"/>
 
-  <!-- Tower windows (3) -->
-  <rect x="214" y="16" width="14" height="10" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.2"/>
-  <rect x="234" y="16" width="14" height="10" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.2"/>
-  <rect x="254" y="16" width="14" height="10" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.2"/>
-  <line x1="216" y1="18" x2="219" y2="23" stroke="white" stroke-width="0.8" opacity="0.3"/>
-  <line x1="236" y1="18" x2="239" y2="23" stroke="white" stroke-width="0.8" opacity="0.3"/>
-  <line x1="256" y1="18" x2="259" y2="23" stroke="white" stroke-width="0.8" opacity="0.3"/>
+  <!-- Tower windows -->
+  <rect x="212" y="14" width="14" height="11" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.3"/>
+  <rect x="233" y="14" width="14" height="11" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.3"/>
+  <rect x="254" y="14" width="14" height="11" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.3"/>
+  <line x1="214" y1="16" x2="217" y2="22" stroke="white" stroke-width="1" opacity="0.35"/>
+  <line x1="235" y1="16" x2="238" y2="22" stroke="white" stroke-width="1" opacity="0.35"/>
+  <line x1="256" y1="16" x2="259" y2="22" stroke="white" stroke-width="1" opacity="0.35"/>
 
   <!-- Tower hatch -->
-  <ellipse cx="242" cy="13" rx="14" ry="4" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
-  <line x1="228" y1="13" x2="256" y2="13" stroke="#4dd0e1" stroke-width="0.8" opacity="0.5"/>
+  <ellipse cx="241" cy="11" rx="14" ry="4" fill="#0277bd" stroke="#40c4ff" stroke-width="1.2"/>
 
   <!-- Periscope -->
-  <line x1="220" y1="11" x2="220" y2="3" stroke="#29b6f6" stroke-width="2.5"/>
-  <line x1="216" y1="3" x2="228" y2="3" stroke="#29b6f6" stroke-width="2"/>
-  <circle cx="228" cy="3" r="3.5" fill="#4dd0e1"/>
-  <circle cx="228" cy="3" r="1.8" fill="#b3e5fc"/>
+  <line x1="218" y1="9" x2="218" y2="2" stroke="#40c4ff" stroke-width="2.5"/>
+  <line x1="214" y1="2" x2="227" y2="2" stroke="#40c4ff" stroke-width="2"/>
+  <circle cx="227" cy="2" r="3.5" fill="#80deea"/>
+  <circle cx="227" cy="2" r="1.8" fill="#e1f5fe"/>
 
   <!-- Radar mast -->
-  <line x1="263" y1="11" x2="263" y2="4" stroke="#4dd0e1" stroke-width="1.8"/>
-  <line x1="258" y1="7" x2="268" y2="7" stroke="#4dd0e1" stroke-width="1.2"/>
-  <rect x="260" y="3" width="6" height="4" rx="1" fill="#0d5fa0" stroke="#4dd0e1" stroke-width="1"/>
+  <line x1="262" y1="9" x2="262" y2="3" stroke="#4dd0e1" stroke-width="1.8"/>
+  <line x1="257" y1="6" x2="267" y2="6" stroke="#4dd0e1" stroke-width="1.2"/>
+  <rect x="259" y="2" width="6" height="4" rx="1" fill="#0277bd" stroke="#4dd0e1" stroke-width="1"/>
 
   <!-- Hull hatch -->
-  <ellipse cx="242" cy="47" rx="18" ry="4.5" fill="#0a3d6e" stroke="#4dd0e1" stroke-width="1.2"/>
-  <line x1="224" y1="47" x2="260" y2="47" stroke="#4dd0e1" stroke-width="0.8" opacity="0.6"/>
+  <ellipse cx="241" cy="46" rx="18" ry="4.5" fill="#0277bd" stroke="#4dd0e1" stroke-width="1.3"/>
+  <line x1="223" y1="46" x2="259" y2="46" stroke="#b3e5fc" stroke-width="0.9" opacity="0.6"/>
 
-  <!-- Porthole 1 -->
-  <circle cx="148" cy="79" r="9" fill="#071e38" stroke="#4dd0e1" stroke-width="1.5"/>
-  <circle cx="148" cy="79" r="7" fill="url(#porthole)"/>
-  <circle cx="144" cy="76" r="2.2" fill="white" opacity="0.3"/>
+  <!-- Portholes -->
+  <circle cx="148" cy="80" r="9" fill="#01579b" stroke="#4dd0e1" stroke-width="1.6"/>
+  <circle cx="148" cy="80" r="7" fill="url(#porthole)"/>
+  <circle cx="144" cy="77" r="2.5" fill="white" opacity="0.35"/>
 
-  <!-- Porthole 2 -->
-  <circle cx="174" cy="79" r="9" fill="#071e38" stroke="#4dd0e1" stroke-width="1.5"/>
-  <circle cx="174" cy="79" r="7" fill="url(#porthole)"/>
-  <circle cx="170" cy="76" r="2.2" fill="white" opacity="0.3"/>
+  <circle cx="174" cy="80" r="9" fill="#01579b" stroke="#4dd0e1" stroke-width="1.6"/>
+  <circle cx="174" cy="80" r="7" fill="url(#porthole)"/>
+  <circle cx="170" cy="77" r="2.5" fill="white" opacity="0.35"/>
 
   <!-- Center navy emblem -->
-  <circle cx="242" cy="80" r="13" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.5"/>
-  <circle cx="242" cy="80" r="10" fill="none" stroke="#4dd0e1" stroke-width="0.8" opacity="0.6"/>
-  <circle cx="242" cy="80" r="4" fill="#29b6f6" opacity="0.7"/>
-  <line x1="236" y1="80" x2="248" y2="80" stroke="#4dd0e1" stroke-width="0.8" opacity="0.5"/>
-  <line x1="242" y1="74" x2="242" y2="86" stroke="#4dd0e1" stroke-width="0.8" opacity="0.5"/>
+  <circle cx="241" cy="80" r="13" fill="#0277bd" stroke="#40c4ff" stroke-width="1.8"/>
+  <circle cx="241" cy="80" r="10" fill="none" stroke="#80deea" stroke-width="1" opacity="0.7"/>
+  <circle cx="241" cy="80" r="4" fill="#40c4ff" opacity="0.8"/>
+  <line x1="235" y1="80" x2="247" y2="80" stroke="#b3e5fc" stroke-width="0.9" opacity="0.6"/>
+  <line x1="241" y1="74" x2="241" y2="86" stroke="#b3e5fc" stroke-width="0.9" opacity="0.6"/>
 
-  <!-- Porthole 3 -->
-  <circle cx="302" cy="79" r="9" fill="#071e38" stroke="#4dd0e1" stroke-width="1.5"/>
-  <circle cx="302" cy="79" r="7" fill="url(#porthole)"/>
-  <circle cx="298" cy="76" r="2.2" fill="white" opacity="0.3"/>
+  <circle cx="302" cy="80" r="9" fill="#01579b" stroke="#4dd0e1" stroke-width="1.6"/>
+  <circle cx="302" cy="80" r="7" fill="url(#porthole)"/>
+  <circle cx="298" cy="77" r="2.5" fill="white" opacity="0.35"/>
 
-  <!-- Porthole 4 -->
-  <circle cx="328" cy="79" r="9" fill="#071e38" stroke="#4dd0e1" stroke-width="1.5"/>
-  <circle cx="328" cy="79" r="7" fill="url(#porthole)"/>
-  <circle cx="324" cy="76" r="2.2" fill="white" opacity="0.3"/>
+  <circle cx="328" cy="80" r="9" fill="#01579b" stroke="#4dd0e1" stroke-width="1.6"/>
+  <circle cx="328" cy="80" r="7" fill="url(#porthole)"/>
+  <circle cx="324" cy="77" r="2.5" fill="white" opacity="0.35"/>
 
   <!-- Hull panel lines -->
-  <line x1="114" y1="44" x2="114" y2="116" stroke="#29b6f6" stroke-width="0.8" opacity="0.18"/>
-  <line x1="346" y1="44" x2="346" y2="116" stroke="#29b6f6" stroke-width="0.8" opacity="0.18"/>
+  <line x1="112" y1="43" x2="112" y2="118" stroke="#40c4ff" stroke-width="0.8" opacity="0.2"/>
+  <line x1="346" y1="43" x2="346" y2="118" stroke="#40c4ff" stroke-width="0.8" opacity="0.2"/>
 
-  <!-- Rudder (vertical) -->
-  <path d="M 400 80 L 418 58 L 424 62 L 405 83 Z" fill="#0d5fa0" stroke="#4dd0e1" stroke-width="1.2"/>
-  <path d="M 400 80 L 418 102 L 424 98 L 405 77 Z" fill="#0d5fa0" stroke="#4dd0e1" stroke-width="1.2"/>
+  <!-- Rudder -->
+  <path d="M 402 80 L 420 57 L 426 61 L 407 83 Z" fill="#0277bd" stroke="#4dd0e1" stroke-width="1.3"/>
+  <path d="M 402 80 L 420 103 L 426 99 L 407 77 Z" fill="#0277bd" stroke="#4dd0e1" stroke-width="1.3"/>
 
   <!-- Propeller shaft -->
-  <rect x="408" y="77" width="26" height="6" rx="3" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1"/>
+  <rect x="410" y="77" width="26" height="6" rx="3" fill="#0277bd" stroke="#40c4ff" stroke-width="1"/>
 
   <!-- Propeller hub -->
-  <circle cx="434" cy="80" r="7" fill="#1565c0" stroke="#4dd0e1" stroke-width="1.8"/>
-  <circle cx="434" cy="80" r="4" fill="url(#propGrad)"/>
+  <circle cx="436" cy="80" r="7" fill="#0277bd" stroke="#4dd0e1" stroke-width="1.8"/>
+  <circle cx="436" cy="80" r="4" fill="url(#propHub)"/>
 
   <!-- 5 propeller blades -->
-  <path d="M 434 80 C 431 70, 427 62, 430 56 C 437 59, 440 67, 437 75 Z"
-    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
-  <path d="M 434 80 C 443 75, 450 70, 454 64 C 452 71, 448 77, 441 81 Z"
-    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
-  <path d="M 434 80 C 443 87, 449 94, 447 100 C 441 98, 437 91, 434 84 Z"
-    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
-  <path d="M 434 80 C 426 88, 421 95, 417 99 C 417 91, 421 84, 429 81 Z"
-    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
-  <path d="M 434 80 C 424 76, 417 72, 416 65 C 422 67, 428 72, 431 78 Z"
-    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
+  <path d="M 436 80 C 433 70, 429 61, 432 55 C 439 58, 442 67, 439 75 Z"
+    fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
+  <path d="M 436 80 C 446 75, 453 70, 457 64 C 455 71, 451 77, 443 81 Z"
+    fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
+  <path d="M 436 80 C 445 87, 451 95, 449 101 C 443 99, 439 91, 436 84 Z"
+    fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
+  <path d="M 436 80 C 428 88, 423 96, 419 100 C 419 92, 423 85, 431 82 Z"
+    fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
+  <path d="M 436 80 C 426 76, 419 72, 418 65 C 424 67, 430 72, 433 78 Z"
+    fill="#29b6f6" stroke="#80deea" stroke-width="0.9"/>
 
-  <!-- Propeller wake bubbles -->
-  <circle cx="420" cy="72" r="2" fill="none" stroke="#80deea" stroke-width="1" opacity="0.5"/>
-  <circle cx="414" cy="65" r="1.5" fill="none" stroke="#80deea" stroke-width="0.8" opacity="0.4"/>
-  <circle cx="422" cy="59" r="1.2" fill="#80deea" opacity="0.3"/>
-  <circle cx="429" cy="54" r="2.2" fill="none" stroke="#80deea" stroke-width="0.8" opacity="0.3"/>
+  <!-- ===== 뽀글뽀글 버블 (SMIL 애니메이션) ===== -->
+  <!-- Bubble 1 -->
+  <circle cx="456" cy="88" r="4.5" fill="none" stroke="#80deea" stroke-width="1.4">
+    <animate attributeName="cy" from="88" to="52" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+    <animate attributeName="opacity" values="0.8;0.6;0" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+    <animate attributeName="r" from="4.5" to="8" dur="1.8s" repeatCount="indefinite" begin="0s"/>
+  </circle>
+  <!-- Bubble 2 -->
+  <circle cx="465" cy="75" r="3" fill="none" stroke="#b3e5fc" stroke-width="1.2">
+    <animate attributeName="cy" from="75" to="42" dur="2.1s" repeatCount="indefinite" begin="0.4s"/>
+    <animate attributeName="opacity" values="0.7;0.5;0" dur="2.1s" repeatCount="indefinite" begin="0.4s"/>
+    <animate attributeName="r" from="3" to="6" dur="2.1s" repeatCount="indefinite" begin="0.4s"/>
+  </circle>
+  <!-- Bubble 3 -->
+  <circle cx="459" cy="95" r="3.5" fill="none" stroke="#80deea" stroke-width="1.2">
+    <animate attributeName="cy" from="95" to="63" dur="2.4s" repeatCount="indefinite" begin="0.8s"/>
+    <animate attributeName="opacity" values="0.6;0.4;0" dur="2.4s" repeatCount="indefinite" begin="0.8s"/>
+    <animate attributeName="r" from="3.5" to="7" dur="2.4s" repeatCount="indefinite" begin="0.8s"/>
+  </circle>
+  <!-- Bubble 4 -->
+  <circle cx="471" cy="84" r="2.5" fill="none" stroke="#b3e5fc" stroke-width="1">
+    <animate attributeName="cy" from="84" to="55" dur="1.6s" repeatCount="indefinite" begin="1.1s"/>
+    <animate attributeName="opacity" values="0.7;0.4;0" dur="1.6s" repeatCount="indefinite" begin="1.1s"/>
+    <animate attributeName="r" from="2.5" to="5.5" dur="1.6s" repeatCount="indefinite" begin="1.1s"/>
+  </circle>
+  <!-- Bubble 5 -->
+  <circle cx="463" cy="70" r="2" fill="#b3e5fc" opacity="0.5">
+    <animate attributeName="cy" from="70" to="40" dur="2.0s" repeatCount="indefinite" begin="1.5s"/>
+    <animate attributeName="opacity" values="0.5;0.3;0" dur="2.0s" repeatCount="indefinite" begin="1.5s"/>
+    <animate attributeName="r" from="2" to="5" dur="2.0s" repeatCount="indefinite" begin="1.5s"/>
+  </circle>
+  <!-- Bubble 6 -->
+  <circle cx="475" cy="91" r="4" fill="none" stroke="#80deea" stroke-width="1.3">
+    <animate attributeName="cy" from="91" to="58" dur="2.3s" repeatCount="indefinite" begin="0.2s"/>
+    <animate attributeName="opacity" values="0.8;0.5;0" dur="2.3s" repeatCount="indefinite" begin="0.2s"/>
+    <animate attributeName="r" from="4" to="7.5" dur="2.3s" repeatCount="indefinite" begin="0.2s"/>
+  </circle>
+  <!-- Bubble 7 small -->
+  <circle cx="469" cy="100" r="2" fill="none" stroke="#4dd0e1" stroke-width="1">
+    <animate attributeName="cy" from="100" to="72" dur="1.9s" repeatCount="indefinite" begin="0.9s"/>
+    <animate attributeName="opacity" values="0.6;0.3;0" dur="1.9s" repeatCount="indefinite" begin="0.9s"/>
+    <animate attributeName="r" from="2" to="4.5" dur="1.9s" repeatCount="indefinite" begin="0.9s"/>
+  </circle>
 
   <!-- Sonar rings at bow -->
-  <ellipse cx="34" cy="80" rx="14" ry="9" fill="none" stroke="#29b6f6" stroke-width="0.8" opacity="0.2"/>
-  <ellipse cx="34" cy="80" rx="23" ry="15" fill="none" stroke="#29b6f6" stroke-width="0.6" opacity="0.1"/>
+  <ellipse cx="32" cy="80" rx="14" ry="9" fill="none" stroke="#40c4ff" stroke-width="0.9" opacity="0.22"/>
+  <ellipse cx="32" cy="80" rx="23" ry="15" fill="none" stroke="#40c4ff" stroke-width="0.7" opacity="0.12"/>
 </svg>

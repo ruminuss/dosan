@@ -71,8 +71,8 @@ export default function HeroSection({ t }: HeroProps) {
         <Image
           src="/submarine.svg"
           alt="Submarine"
-          width={320}
-          height={96}
+          width={420}
+          height={126}
           className="relative z-10 opacity-80"
           priority
         />

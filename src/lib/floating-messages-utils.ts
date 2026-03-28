@@ -1,6 +1,6 @@
 export interface FloatingPosition {
   top: number;  // 10~80
-  left: number; // 5~75
+  left: number; // 5~<75
 }
 
 export function hasPositionConflict(

@@ -66,7 +66,7 @@ export default function FloatingMessages() {
           );
         }
       })
-      .catch(() => {});
+      .catch((err) => console.error("[FloatingMessages] fetch failed:", err));
     return () => timerIds.forEach(clearTimeout);
   }, [popFromPool]);
 

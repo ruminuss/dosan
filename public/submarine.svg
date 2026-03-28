@@ -1,20 +1,153 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" fill="none">
-  <!-- Hull -->
-  <ellipse cx="200" cy="60" rx="160" ry="35" fill="#1e3a5f" stroke="#4a90d9" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 144" fill="none">
+  <defs>
+    <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e88e5"/>
+      <stop offset="50%" stop-color="#0d5fa0"/>
+      <stop offset="100%" stop-color="#083970"/>
+    </linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#42a5f5"/>
+      <stop offset="100%" stop-color="#0d5fa0"/>
+    </linearGradient>
+    <radialGradient id="porthole" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#b3e5fc"/>
+      <stop offset="100%" stop-color="#0277bd" stop-opacity="0.4"/>
+    </radialGradient>
+    <radialGradient id="propGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#40c4ff"/>
+      <stop offset="100%" stop-color="#1565c0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Hull shadow -->
+  <ellipse cx="240" cy="118" rx="178" ry="8" fill="#000" opacity="0.18"/>
+
+  <!-- Main hull (torpedo shape) -->
+  <path d="M 68 80
+    C 68 57, 88 46, 114 44
+    L 346 44
+    C 380 44, 400 57, 408 70
+    C 413 78, 413 88, 408 96
+    C 400 109, 380 116, 346 116
+    L 114 116
+    C 88 116, 68 105, 68 88 Z"
+    fill="url(#hull)" stroke="#29b6f6" stroke-width="2"/>
+
+  <!-- Hull highlight stripe -->
+  <path d="M 114 49 L 340 47 C 372 47 392 57 402 70"
+    stroke="#64b5f6" stroke-width="1" opacity="0.4" fill="none"/>
+
+  <!-- Bow dome -->
+  <path d="M 68 88 C 54 88, 38 84, 32 80 C 38 76, 54 72, 68 72 Z"
+    fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.5"/>
+
+  <!-- Torpedo tube ports -->
+  <rect x="30" y="72" width="22" height="7" rx="3.5" fill="#062a4a" stroke="#29b6f6" stroke-width="1.2"/>
+  <rect x="30" y="81" width="22" height="7" rx="3.5" fill="#062a4a" stroke="#29b6f6" stroke-width="1.2"/>
+  <circle cx="32" cy="75.5" r="2" fill="#29b6f6" opacity="0.6"/>
+  <circle cx="32" cy="84.5" r="2" fill="#29b6f6" opacity="0.6"/>
+
+  <!-- Bow hydroplanes -->
+  <path d="M 134 83 L 104 64 L 110 62 L 139 80 Z" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
+  <path d="M 134 97 L 104 116 L 110 118 L 139 100 Z" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
+
+  <!-- Stern hydroplanes -->
+  <path d="M 364 83 L 396 64 L 400 67 L 367 85 Z" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
+  <path d="M 364 97 L 396 116 L 400 113 L 367 95 Z" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
+
   <!-- Conning tower -->
-  <rect x="170" y="20" width="50" height="30" rx="8" fill="#1e3a5f" stroke="#4a90d9" stroke-width="1.5"/>
+  <path d="M 207 44 L 207 20 C 207 14, 212 11, 220 11 L 264 11 C 272 11, 277 14, 277 20 L 277 44 Z"
+    fill="url(#tower)" stroke="#29b6f6" stroke-width="2"/>
+  <line x1="207" y1="32" x2="277" y2="32" stroke="#64b5f6" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Tower windows (3) -->
+  <rect x="214" y="16" width="14" height="10" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.2"/>
+  <rect x="234" y="16" width="14" height="10" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.2"/>
+  <rect x="254" y="16" width="14" height="10" rx="3" fill="url(#porthole)" stroke="#4dd0e1" stroke-width="1.2"/>
+  <line x1="216" y1="18" x2="219" y2="23" stroke="white" stroke-width="0.8" opacity="0.3"/>
+  <line x1="236" y1="18" x2="239" y2="23" stroke="white" stroke-width="0.8" opacity="0.3"/>
+  <line x1="256" y1="18" x2="259" y2="23" stroke="white" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Tower hatch -->
+  <ellipse cx="242" cy="13" rx="14" ry="4" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.2"/>
+  <line x1="228" y1="13" x2="256" y2="13" stroke="#4dd0e1" stroke-width="0.8" opacity="0.5"/>
+
   <!-- Periscope -->
-  <line x1="195" y1="5" x2="195" y2="20" stroke="#4a90d9" stroke-width="2"/>
-  <circle cx="195" cy="5" r="3" fill="#4a90d9"/>
-  <!-- Propeller -->
-  <circle cx="365" cy="60" r="8" fill="none" stroke="#4a90d9" stroke-width="1.5"/>
-  <line x1="365" y1="50" x2="365" y2="70" stroke="#4a90d9" stroke-width="1.5"/>
-  <line x1="355" y1="55" x2="375" y2="65" stroke="#4a90d9" stroke-width="1.5"/>
-  <!-- Porthole -->
-  <circle cx="140" cy="55" r="5" fill="none" stroke="#7ab3e0" stroke-width="1"/>
-  <circle cx="160" cy="55" r="5" fill="none" stroke="#7ab3e0" stroke-width="1"/>
-  <circle cx="240" cy="55" r="5" fill="none" stroke="#7ab3e0" stroke-width="1"/>
-  <circle cx="260" cy="55" r="5" fill="none" stroke="#7ab3e0" stroke-width="1"/>
-  <!-- Korean flag mark -->
-  <circle cx="200" cy="55" r="6" fill="#4a90d9" opacity="0.5"/>
+  <line x1="220" y1="11" x2="220" y2="3" stroke="#29b6f6" stroke-width="2.5"/>
+  <line x1="216" y1="3" x2="228" y2="3" stroke="#29b6f6" stroke-width="2"/>
+  <circle cx="228" cy="3" r="3.5" fill="#4dd0e1"/>
+  <circle cx="228" cy="3" r="1.8" fill="#b3e5fc"/>
+
+  <!-- Radar mast -->
+  <line x1="263" y1="11" x2="263" y2="4" stroke="#4dd0e1" stroke-width="1.8"/>
+  <line x1="258" y1="7" x2="268" y2="7" stroke="#4dd0e1" stroke-width="1.2"/>
+  <rect x="260" y="3" width="6" height="4" rx="1" fill="#0d5fa0" stroke="#4dd0e1" stroke-width="1"/>
+
+  <!-- Hull hatch -->
+  <ellipse cx="242" cy="47" rx="18" ry="4.5" fill="#0a3d6e" stroke="#4dd0e1" stroke-width="1.2"/>
+  <line x1="224" y1="47" x2="260" y2="47" stroke="#4dd0e1" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Porthole 1 -->
+  <circle cx="148" cy="79" r="9" fill="#071e38" stroke="#4dd0e1" stroke-width="1.5"/>
+  <circle cx="148" cy="79" r="7" fill="url(#porthole)"/>
+  <circle cx="144" cy="76" r="2.2" fill="white" opacity="0.3"/>
+
+  <!-- Porthole 2 -->
+  <circle cx="174" cy="79" r="9" fill="#071e38" stroke="#4dd0e1" stroke-width="1.5"/>
+  <circle cx="174" cy="79" r="7" fill="url(#porthole)"/>
+  <circle cx="170" cy="76" r="2.2" fill="white" opacity="0.3"/>
+
+  <!-- Center navy emblem -->
+  <circle cx="242" cy="80" r="13" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1.5"/>
+  <circle cx="242" cy="80" r="10" fill="none" stroke="#4dd0e1" stroke-width="0.8" opacity="0.6"/>
+  <circle cx="242" cy="80" r="4" fill="#29b6f6" opacity="0.7"/>
+  <line x1="236" y1="80" x2="248" y2="80" stroke="#4dd0e1" stroke-width="0.8" opacity="0.5"/>
+  <line x1="242" y1="74" x2="242" y2="86" stroke="#4dd0e1" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Porthole 3 -->
+  <circle cx="302" cy="79" r="9" fill="#071e38" stroke="#4dd0e1" stroke-width="1.5"/>
+  <circle cx="302" cy="79" r="7" fill="url(#porthole)"/>
+  <circle cx="298" cy="76" r="2.2" fill="white" opacity="0.3"/>
+
+  <!-- Porthole 4 -->
+  <circle cx="328" cy="79" r="9" fill="#071e38" stroke="#4dd0e1" stroke-width="1.5"/>
+  <circle cx="328" cy="79" r="7" fill="url(#porthole)"/>
+  <circle cx="324" cy="76" r="2.2" fill="white" opacity="0.3"/>
+
+  <!-- Hull panel lines -->
+  <line x1="114" y1="44" x2="114" y2="116" stroke="#29b6f6" stroke-width="0.8" opacity="0.18"/>
+  <line x1="346" y1="44" x2="346" y2="116" stroke="#29b6f6" stroke-width="0.8" opacity="0.18"/>
+
+  <!-- Rudder (vertical) -->
+  <path d="M 400 80 L 418 58 L 424 62 L 405 83 Z" fill="#0d5fa0" stroke="#4dd0e1" stroke-width="1.2"/>
+  <path d="M 400 80 L 418 102 L 424 98 L 405 77 Z" fill="#0d5fa0" stroke="#4dd0e1" stroke-width="1.2"/>
+
+  <!-- Propeller shaft -->
+  <rect x="408" y="77" width="26" height="6" rx="3" fill="#0d5fa0" stroke="#29b6f6" stroke-width="1"/>
+
+  <!-- Propeller hub -->
+  <circle cx="434" cy="80" r="7" fill="#1565c0" stroke="#4dd0e1" stroke-width="1.8"/>
+  <circle cx="434" cy="80" r="4" fill="url(#propGrad)"/>
+
+  <!-- 5 propeller blades -->
+  <path d="M 434 80 C 431 70, 427 62, 430 56 C 437 59, 440 67, 437 75 Z"
+    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
+  <path d="M 434 80 C 443 75, 450 70, 454 64 C 452 71, 448 77, 441 81 Z"
+    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
+  <path d="M 434 80 C 443 87, 449 94, 447 100 C 441 98, 437 91, 434 84 Z"
+    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
+  <path d="M 434 80 C 426 88, 421 95, 417 99 C 417 91, 421 84, 429 81 Z"
+    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
+  <path d="M 434 80 C 424 76, 417 72, 416 65 C 422 67, 428 72, 431 78 Z"
+    fill="#1976d2" stroke="#40c4ff" stroke-width="0.9"/>
+
+  <!-- Propeller wake bubbles -->
+  <circle cx="420" cy="72" r="2" fill="none" stroke="#80deea" stroke-width="1" opacity="0.5"/>
+  <circle cx="414" cy="65" r="1.5" fill="none" stroke="#80deea" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="422" cy="59" r="1.2" fill="#80deea" opacity="0.3"/>
+  <circle cx="429" cy="54" r="2.2" fill="none" stroke="#80deea" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Sonar rings at bow -->
+  <ellipse cx="34" cy="80" rx="14" ry="9" fill="none" stroke="#29b6f6" stroke-width="0.8" opacity="0.2"/>
+  <ellipse cx="34" cy="80" rx="23" ry="15" fill="none" stroke="#29b6f6" stroke-width="0.6" opacity="0.1"/>
 </svg>

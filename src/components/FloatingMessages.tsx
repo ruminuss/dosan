@@ -118,11 +118,13 @@ export default function FloatingMessages() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.6 }}
           style={{ top: `${msg.top}%`, left: `${msg.left}%` }}
-          className="absolute pointer-events-none z-[5] max-w-[160px]"
+          className="absolute pointer-events-none z-[5] w-[160px]"
         >
-          <div className="bg-[rgba(74,144,217,0.15)] border border-[rgba(74,144,217,0.35)] rounded-full px-3 py-1 text-xs text-[#7ab3e0] whitespace-nowrap overflow-hidden text-ellipsis">
-            {getFlagEmoji(msg.nationality)} {msg.nickname}:{" "}
-            {truncateMessage(msg.message)}
+          <div className="bg-[rgba(74,144,217,0.15)] border border-[rgba(74,144,217,0.35)] rounded-2xl px-3 py-2 text-xs text-[#7ab3e0]">
+            <p className="line-clamp-2 leading-snug">{msg.message}</p>
+            <p className="mt-1 text-[10px] opacity-60">
+              {getFlagEmoji(msg.nationality)} {msg.nickname}
+            </p>
           </div>
         </motion.div>
       ))}
